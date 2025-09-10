@@ -75,7 +75,8 @@ class Database:
                     pid = line.strip().split()[0][1:]
                     seqs[pid] = ''
                 else:
-                    seqs[pid] += line.strip()
+                    seqs[pid] += line.strip().replace('*', '') 
+                    # seq = seq.replace('*', '') 
         seqs = {k: v for k, v in sorted(seqs.items(), key=lambda item: len(item[1]))}
         
         return seqs

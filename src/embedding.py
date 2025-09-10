@@ -111,7 +111,8 @@ class Embedding:
         Returns:
             dict: Dictionary of embeds/contact map from ESM-2.
         """
-
+        # The corrected code to remove the asterisk
+        seq = seq.replace('*', '') 
         _, _, batch_tokens = model.esm_tokenizer([(self.pid, seq)])
         batch_tokens = batch_tokens.to(device)
         with torch.no_grad():

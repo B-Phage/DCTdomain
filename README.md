@@ -13,6 +13,21 @@ conda env create --file env.yml
 conda activate dctdomain
 g++ -o src/RecCut src/RecCut.cpp
 ```
+
+### For macOS
+Change RecCut.cpp to use
+    #include <iostream>
+    #include <numeric>
+instead of #include <bits/stdc++.h> 
+Then:
+
+```
+conda create --name dctdomain python=3.10 fair-esm
+conda activate dctdomain
+conda install -c pytorch faiss-cpu
+clang++ -o src/RecCut src/RecCut.cpp
+```
+
 **Make sure that you compile RecCut as above before you start to use DCTdomain.**
 
 ## Approach
